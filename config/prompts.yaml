@@ -1,0 +1,51 @@
+ontology_generation: |
+  You are an expert ontology engineer. Analyze the following document and extract:
+  
+  1. Entity Types: Identify all important entity categories (e.g., Person, Organization, Concept)
+  2. Relationship Types: Define relationships between entities
+  3. Hierarchies: Establish taxonomic relationships
+  4. Attributes: Key properties for each entity type
+  
+  Document:
+  {document_text}
+  
+  Return a structured ontology in JSON format with entity_types, relationship_types, and hierarchies.
+
+entity_extraction: |
+  Extract entities from the text according to this ontology:
+  {ontology}
+  
+  Text:
+  {text}
+  
+  Return entities in JSON format with type, name, attributes, and confidence scores.
+
+relationship_extraction: |
+  Given these entities: {entities}
+  And this ontology: {ontology}
+  
+  Extract relationships from the text:
+  {text}
+  
+  Return relationships in JSON format with source, target, type, and confidence.
+
+entity_resolution: |
+  Determine if these two entities refer to the same real-world entity:
+  
+  Entity 1: {entity1}
+  Entity 2: {entity2}
+  
+  Consider: name variations, aliases, context, and attributes.
+  Return: {{"is_same": true/false, "confidence": 0.0-1.0, "reasoning": "..."}}
+
+query_planning: |
+  Given this query: {query}
+  
+  Available tools:
+  - vector_search: Semantic similarity search using embeddings
+  - graph_traversal: Navigate relationships in the knowledge graph
+  - logical_filter: Apply metadata/attribute constraints
+  - cypher_query: Execute custom Cypher queries
+  
+  Plan a multi-step retrieval strategy. Return JSON with:
+  {{"steps": [{{"tool": "...", "params": {{...}}, "reasoning": "..."}}]}}

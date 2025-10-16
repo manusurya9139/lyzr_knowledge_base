@@ -1,0 +1,31 @@
+# Core API Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# OpenAI (Latest Stable)
+openai==1.6.1
+
+# Graph Databases
+neo4j==5.14.1
+gremlinpython==3.7.0
+
+# Vector Store
+qdrant-client==1.7.0
+
+# AWS (for Neptune - Optional)
+boto3==1.29.7
+
+# Utilities
+python-multipart==0.0.6
+aiofiles==23.2.1
+redis==5.0.1
+pyyaml==6.0.1
+numpy==1.24.3
+tiktoken==0.5.2
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
